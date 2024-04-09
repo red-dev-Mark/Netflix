@@ -1,8 +1,30 @@
 import React from "react";
 import { Badge } from "react-bootstrap";
 import "./MovieCard.css";
+import { useMovieGenreQuery } from "../../../../hook/useMovieGenre";
 
 export default function MovieCard({ movie }) {
+  // let totalPoint = 10;
+  // let pointAverage = movie.vote_average.toFixed(1);
+  // let starAverage = Math.round(movie.vote_average / 2);
+  // let totalStar = "";
+
+  // (function () {
+  //   for (let i = 0; i < starAverage; i++) totalStar += "⭐️";
+  //   for (let j = 0; j < 5 - starAverage; j++) totalStar += "★";
+  // })();
+
+  const { data: genreData } = useMovieGenreQuery();
+
+  const showGenre = (genreList) => {
+    if (!genreData) return [];
+    let genreNameList = genreList.map((id) => {
+      const genreObj = genreData.find((genre) => genre.id === id);
+      return genreObj.name;
+    });
+    return genreNameList;
+  };
+
   return (
     <div
       style={{
@@ -12,11 +34,16 @@ export default function MovieCard({ movie }) {
     >
       <div className="overlay">
         <h3>{movie.title}</h3>
-        {movie.genre_ids.map((id) => (
-          <Badge bg="danger" key={id}>
+          {showGenre(movie?.genre_ids).map((name, id) => (
+            <Badge className="ageBadge" bg="danger" key={id}>
+              {name}
+            </Badge>
+          ))}
+        {/* {movie.genre_ids.map((id) => (
+          <Badge className="ageBadge" bg="danger" key={id}>
             {id}
           </Badge>
-        ))}
+        ))} */}
         <div>
           <div>평점 : {Math.round(movie.vote_average)} / 10</div>
           <div>
