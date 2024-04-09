@@ -1,7 +1,7 @@
 import React from "react";
 import { Badge } from "react-bootstrap";
 import "./MovieCard.css";
-import { useMovieGenreQuery } from "../../../../hook/useMovieGenre";
+import { useMovieGenreQuery } from "../../hook/useMovieGenre";
 
 export default function MovieCard({ movie }) {
   // let totalPoint = 10;
