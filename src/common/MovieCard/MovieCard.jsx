@@ -4,23 +4,15 @@ import "./MovieCard.css";
 import { useMovieGenreQuery } from "../../hook/useMovieGenre";
 
 export default function MovieCard({ movie }) {
-  // let totalPoint = 10;
-  // let pointAverage = movie.vote_average.toFixed(1);
-  // let starAverage = Math.round(movie.vote_average / 2);
-  // let totalStar = "";
-
-  // (function () {
-  //   for (let i = 0; i < starAverage; i++) totalStar += "⭐️";
-  //   for (let j = 0; j < 5 - starAverage; j++) totalStar += "★";
-  // })();
-
+  //data: genreData -> 이름 재정의
   const { data: genreData } = useMovieGenreQuery();
 
-  const showGenre = (genreList) => {
+  const showGenre = (genreIdList) => {
     if (!genreData) return [];
-    let genreNameList = genreList.map((id) => {
+    const genreNameList = genreIdList.map((id) => {
       const genreObj = genreData.find((genre) => genre.id === id);
       return genreObj.name;
+      // return (genreData.find((genre) => genre.id === id)).name;
     });
     return genreNameList;
   };
@@ -34,11 +26,11 @@ export default function MovieCard({ movie }) {
     >
       <div className="overlay">
         <h3>{movie.title}</h3>
-          {showGenre(movie?.genre_ids).map((name, id) => (
-            <Badge className="ageBadge" bg="danger" key={id}>
-              {name}
-            </Badge>
-          ))}
+        {showGenre(movie?.genre_ids).map((name, id) => (
+          <Badge className="ageBadge" bg="danger" key={id}>
+            {name}
+          </Badge>
+        ))}
         {/* {movie.genre_ids.map((id) => (
           <Badge className="ageBadge" bg="danger" key={id}>
             {id}

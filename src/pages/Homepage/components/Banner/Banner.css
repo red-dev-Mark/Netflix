@@ -16,7 +16,9 @@
   height: 56vh;
   width: 100%;
 }
-
+.banner img {
+  width: 100%;
+}
 .banner-text-area {
   width: 50%;
   display: flex;
