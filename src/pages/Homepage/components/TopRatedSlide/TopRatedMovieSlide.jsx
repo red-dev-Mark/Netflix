@@ -1,12 +1,12 @@
 import React from "react";
-import { usePopularMoviesQuery } from "../../../../hook/usePopularMovies";
+import { useTopRatedMoviesQuery } from "../../../../hook/useTopRatedMovies";
 import { Alert } from "react-bootstrap";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import MovieCard from "../MovieCard/MovieCard";
-import "./PopularMovieSlide.css";
+import "./TopRatedMovieSlide.css";
 
-export default function PopularMovieSlide() {
+export default function TopRatedMovieSlide() {
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -25,8 +25,7 @@ export default function PopularMovieSlide() {
     },
   };
 
-  const { data, isLoading, isError, error } = usePopularMoviesQuery();
-  // const { data, isLoading, isError, error } = useGenreIdsQuery();
+  const { data, isLoading, isError, error } = useTopRatedMoviesQuery();
 
   //조건부 렌더링
   if (isLoading) {
@@ -39,10 +38,9 @@ export default function PopularMovieSlide() {
   if (!(data && data.results && data.results.length !== 0)) {
     return <div>No data available</div>;
   }
-  // console.log(data.results[0].genre_ids);
   return (
-    <div className="popular-movie-slide">
-      <h2>Popular Movie</h2>
+    <div className="top-rate-movie-slide">
+      <h2>Top Rated Movie</h2>
       <Carousel
         infinite={true} // 무한반복
         centerMode={true}
@@ -50,10 +48,6 @@ export default function PopularMovieSlide() {
         containerClass="carousel-container"
         responsive={responsive}
       >
-        {/* <div>Item 1</div>
-        <div>Item 2</div>
-        <div>Item 3</div>
-        <div>Item 4</div> */}
         {data.results.map((movie, index) => (
           <MovieCard movie={movie} key={index} />
         ))}

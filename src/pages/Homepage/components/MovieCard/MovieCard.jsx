@@ -25,7 +25,7 @@ export default function MovieCard({ movie }) {
           <div>
             연령제한 : {movie.adult ? "청소년 관람불가" : "전체 이용가"}
           </div>
-          <p>{movie.overview}</p>
+          {/* <p>{movie.overview}</p> */}
         </div>
       </div>
     </div>
