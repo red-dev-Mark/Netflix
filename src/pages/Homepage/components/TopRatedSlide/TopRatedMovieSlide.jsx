@@ -1,6 +1,6 @@
 import React from "react";
 import { useTopRatedMoviesQuery } from "../../../../hook/useTopRatedMovies";
-import { Alert } from "react-bootstrap";
+import { Alert, Spinner } from "react-bootstrap";
 import "react-multi-carousel/lib/styles.css";
 import { responsive } from "../../../../constants/responsive";
 import MovieSlider from "../../../../common/MovieSlider/MovieSlider";
@@ -9,7 +9,15 @@ export default function TopRatedMovieSlide() {
 
   //조건부 렌더링
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return (
+      <div className="spinner-area">
+        <Spinner
+          animation="border"
+          variant="danger"
+          style={{ width: "5rem", height: "5rem" }}
+        />
+      </div>
+    );
   }
   if (isError) {
     return <Alert variant="danger">{error.message}</Alert>;

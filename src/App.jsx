@@ -3,9 +3,9 @@ import "./App.css";
 import AppLayOut from "./layout/AppLayOut";
 import { Routes, Route } from "react-router-dom";
 import Homepage from "./pages/Homepage/Homepage";
-import Movies from "./pages/Movies/Movies";
 import MovieDetail from "./pages/MovieDetail/MovieDetail";
 import NotFoundPage from "./pages/NotFound/NotFoundPage";
+import MoviePage from "./pages/Movies/MoviePage";
 
 //페이지 라우터 구성
 //홈페이지 : /
@@ -22,7 +22,7 @@ export default function App() {
         <Route path="/" element={<AppLayOut />}>
           <Route index element={<Homepage />} />
           <Route path="movies">
-            <Route index element={<Movies />} />
+            <Route index element={<MoviePage />} />
             <Route path=":id" element={<MovieDetail />} />
           </Route>
         </Route>

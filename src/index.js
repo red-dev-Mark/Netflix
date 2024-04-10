@@ -14,8 +14,8 @@ root.render(
   <QueryClientProvider client={queryClient}>
     <BrowserRouter>
       <App />
-      <Analytics/>
-      <SpeedInsights />
+      {/* <Analytics/> */}
+      {/* <SpeedInsights /> */}
     </BrowserRouter>
   </QueryClientProvider>
 );
