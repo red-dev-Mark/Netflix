@@ -26,16 +26,13 @@ export default function MovieCard({ movie }) {
     >
       <div className="overlay">
         <h3>{movie.title}</h3>
-        {showGenre(movie?.genre_ids).map((name, id) => (
-          <Badge className="ageBadge" bg="danger" key={id}>
-            {name}
-          </Badge>
-        ))}
-        {/* {movie.genre_ids.map((id) => (
-          <Badge className="ageBadge" bg="danger" key={id}>
-            {id}
-          </Badge>
-        ))} */}
+        <div>
+          {showGenre(movie?.genre_ids).map((name, id) => (
+            <Badge className="ageBadge" bg="danger" key={id}>
+              {name}
+            </Badge>
+          ))}
+        </div>
         <div>
           <div>평점 : {Math.round(movie.vote_average)} / 10</div>
           <div>

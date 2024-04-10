@@ -10,6 +10,9 @@ export const useMovieGenreQuery = () => {
     queryKey: ["movie-genre"],
     queryFn: fetchMovieGenre,
     select: (result) => result.data.genres,
-    staleTime: 3600000,
+    //장르는 자주 업데이트되지 않음..
+    //그런데 홈페이지로 갈때마다 계속 호출
+    //5분
+    staleTime: 3000000,
   });
 };
