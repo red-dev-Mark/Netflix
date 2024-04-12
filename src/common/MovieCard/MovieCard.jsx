@@ -4,7 +4,7 @@ import "./MovieCard.css";
 import { useMovieGenreQuery } from "../../hook/useMovieGenre";
 
 export default function MovieCard({ movie }) {
-  //data: genreData -> 이름 재정의
+  //data: genreData -> data에서 genreData로 이름 재정의
   const { data: genreData } = useMovieGenreQuery();
 
   const showGenre = (genreIdList) => {
@@ -39,7 +39,7 @@ export default function MovieCard({ movie }) {
             관객수 : {(movie.popularity * 1000).toLocaleString("ko-KR")}명
           </div>
           <div>
-            연령제한 : {movie.adult ? "청소년 관람불가" : "전체 이용가"}
+            연령제한 : {movie.adult ? "청소년 관람불가" : "전체이용가"}
           </div>
           {/* <p>{movie.overview}</p> */}
         </div>
