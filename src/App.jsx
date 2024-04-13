@@ -26,7 +26,7 @@ export default function App() {
             <Route path=":id" element={<MovieDetail />} />
           </Route>
         </Route>
-        <Route path="*" element={<NotFoundPage />}></Route>
+        <Route path="/*" element={<NotFoundPage />}></Route>
       </Routes>
     </div>
   );
