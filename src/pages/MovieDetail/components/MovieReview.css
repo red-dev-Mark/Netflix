@@ -1,0 +1,27 @@
+.movie-review h2 {
+  padding: 10px 10px 10px 0;
+}
+.review-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.review {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid white;
+  margin: 10px;
+  border-radius: 10px;
+  height: 200px;
+  overflow-y: scroll;
+}
+
+.review div:first-child {
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 10px;
+  background-color: white;
+  color: black;
+  margin-bottom: 10px;
+}
