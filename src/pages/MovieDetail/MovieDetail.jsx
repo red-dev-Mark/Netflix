@@ -27,7 +27,7 @@ export default function MovieDetail() {
   }
   return (
     <div className="movie-detail">
-      <Container>
+      <Container className="movie-detail">
         <Row>
           <Col>
             <img

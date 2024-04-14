@@ -31,6 +31,12 @@
 
 @media screen and (max-width: 768px) {
   .movie-detail-img {
-    width: 400px;
+    width: 300px;
+  }
+  .movie-detail {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
   }
 }
