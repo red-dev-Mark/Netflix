@@ -62,7 +62,7 @@ export default function MovieDetail() {
             </div>
           </Col>
         </Row>
-        <Row>
+        <Row className="recommend">
           <MovieRecommend />
         </Row>
         <Row>

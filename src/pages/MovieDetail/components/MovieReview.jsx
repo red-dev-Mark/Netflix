@@ -7,7 +7,7 @@ import "./MovieReview.css";
 export default function MovieReview() {
   const { id } = useParams();
   const { data, isLoading, isError, error } = useMovieReviewsQuery({ id });
-//   console.log(data);
+  //   console.log(data);
 
   if (isLoading) {
     return (
@@ -29,11 +29,11 @@ export default function MovieReview() {
       <h2>Reviews</h2>
       <div className="review-container">
         {data?.map((item, index) => (
-            <div className="review" key={index}>
-              <div>{item?.author}</div>
-              <div>{item?.content}</div>
-            </div>
-          ))}
+          <div className="review" key={index}>
+            <div>{item?.author}</div>
+            <div>{item?.content}</div>
+          </div>
+        ))}
       </div>
     </div>
   );

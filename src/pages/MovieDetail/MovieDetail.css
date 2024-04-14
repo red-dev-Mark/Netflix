@@ -28,3 +28,9 @@
   margin-top: 18px;
   margin-right: 10px;
 }
+
+@media screen and (max-width: 768px) {
+  .movie-detail-img {
+    width: 400px;
+  }
+}

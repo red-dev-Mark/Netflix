@@ -17,3 +17,16 @@
   justify-content: center;
   align-items: center;
 }
+
+@media screen and (max-width: 768px) {
+  .movie-detail {
+    display: flex;
+    flex-direction: column;
+  }
+  h2{
+    margin: 0
+  }
+  .movie-recommendation {
+    display: none;
+  }
+}
