@@ -61,8 +61,9 @@ export default function MoviePage() {
     return <Alert variant="danger">{error.message}</Alert>;
   }
   if (!(data && data.results && data.results.length !== 0)) {
-    return <div>No data available</div>;
+    return <div>No data availablee</div>;
   }
+  //   console.log(data);
   //   console.log(data);
 
   return (
