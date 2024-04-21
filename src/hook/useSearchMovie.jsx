@@ -15,8 +15,6 @@ const fetchSearchMovie = ({ keyword, page }) => {
 export const useSearchMovieQuery = ({ keyword, page }) => {
   return useQuery({
     //이번에는 조금 다름, 키워드에 따라서 url이 달라짐
-    //이번에는 조금 다름, 키워드에 따라서 url이 달라짐
-    //이번에는 조금 다름, 키워드에 따라서 url이 달라짐
     queryKey: ["movie-search", { keyword, page }],
     // queryKey: ["movie-search",  keyword, page ], 이 방법도 가능
     queryFn: () => fetchSearchMovie({ keyword, page }),
