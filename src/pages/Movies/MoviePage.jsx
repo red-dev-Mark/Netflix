@@ -46,6 +46,7 @@ export default function MoviePage() {
     keyword,
     page,
   });
+
   if (isLoading) {
     return (
       <div className="spinner-area">
@@ -64,7 +65,7 @@ export default function MoviePage() {
     return <div>No data availablee</div>;
   }
   //   console.log(data);
-  //   console.log(data);
+    console.log(data);
 
   return (
     <div>

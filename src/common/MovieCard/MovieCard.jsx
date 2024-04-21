@@ -9,7 +9,6 @@ export default function MovieCard({ movie }) {
 
   //data: genreData -> data에서 genreData로 이름 재정의
   const { data: genreData } = useMovieGenreQuery() || {};
-
   const showGenre = (genreIdList) => {
     if (!genreData) return [];
     const genreNameList = genreIdList.map((id) => {
@@ -23,6 +22,7 @@ export default function MovieCard({ movie }) {
   const goDetailMovies = (id) => {
     navigate(`/movies/${id}`);
   };
+  // console.log(genreData);
 
   return (
     <div
