@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import api from "../utils/api";
 
+// 영화 장르 커스텀 훅
 const fetchMovieGenre = () => {
   return api.get(`/genre/movie/list?language=ko`);
 };

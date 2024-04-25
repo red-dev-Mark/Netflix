@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import api from "../utils/api";
 
+// 영화 디테일 페이지 커스텀 훅
 const fetchDetailMovies = ({ id }) => {
   return api.get(`/movie/${id}?language=ko`);
 };
