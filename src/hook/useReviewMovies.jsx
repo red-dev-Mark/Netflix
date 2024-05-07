@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import api from "../utils/api";
 
-//영화 리뷰 관련 커스텀 훅
+//영화 리뷰 커스텀 훅
 const fetchMovieReviews = ({ id }) => {
   return api.get(`/movie/${id}/reviews`);
 };
